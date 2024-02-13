@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Site de rencontres{% endblock %}
+
+{% block body %}
+
+<section class="sports">
+{% for sport in sports %}
+<sport>
+<h2>{{ sport.title}}</h2><br>
+
+<br><br>
+<div class="content">
+<img src="{{sport.image}}" alt="" height="400" width="900"><br><br>
+{{sport.description | raw}}<br>
+
+</div>
+</sport>
+<br>
+{% endfor %}
+</section>
+{% endblock %}

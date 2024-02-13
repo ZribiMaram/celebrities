@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<sports>
+<br>
+{% if sports is null %}
+<h1>no sports</h1>
+{% else %}
+
+<h2>{{sports.title}}</h2>
+<div class="metadata">category: {{sports.category}}</div>
+<div class="content">
+<img src="{{sports.image}}" alt="" height="400" width="900"><br><br>
+{{sports.description | raw}}
+</div>
+</sports>
+<section id="commentaires">
+<h1>{{ sports.commentaires | length}}{{ " comments" }} : </h1><br>
+{% for comment in sports.commentaires %}
+  <div class="comment">
+    <div class="row">
+      <div class="col-3">
+        {{comment.author}}
+      </div>
+      <div class="col">
+        {{comment.content | raw}}
+      </div>
+    </div>
+  </div><br>
+  {% endfor %}
+  {{ form_start(commentForm)}}
+  {{form_row(commentForm.author, {'attr':{'placeholder':"name"}})}}
+  {{form_row(commentForm.content, {'attr': {'placeholder': "your comment"}})}}
+  <button type="submit" class="btn btn-success">add comment !</button>
+  {{ form_end(commentForm)}}
+
+  {% endif %}
+
+{% endblock %}
