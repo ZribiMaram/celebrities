@@ -59,3 +59,19 @@ cache/
 ../../Downloads/
 ../../Documents/
 ../../Desktop/
+# Exclude untracked directories
+../../OneDrive/
+../../node_modules/
+../../*.dat
+../../*.exe
+../../*.log
+../../AppData/
+../../Downloads/
+../../Desktop/
+../../*.zip
+
+# Ignore specific tools or temporary files
+*.tmp
+*.bak
+.vscode/
+.idea/
