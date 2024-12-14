@@ -75,3 +75,5 @@ cache/
 *.bak
 .vscode/
 .idea/
+azureT/terraform.tfvars
+azureT/terraform.tfstate*
